@@ -26,7 +26,7 @@ for i in range(N):
     while left<=right:
         mid=(left+right)//2
         if Mposition[mid]<=x:
-            # 마지막 사대거나, 사대의 위치가
+            # 마지막 사대거나, 동물이 오른쪽 사대 안에 있을때
             if len(Mposition)-1 == mid or Mposition[mid+1]>x:
                 break
             left=mid+1
