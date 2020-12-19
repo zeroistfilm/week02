@@ -1,5 +1,4 @@
-import sys
-N, M = map(int, sys.stdin.readline().split())
+N, M = map(int, input().split())
 tree = list(map(int, input().split()))
 
 lo = 0
@@ -14,4 +13,4 @@ while(lo+1 < hi):
         lo = mid
     else:
         hi = mid
-sys.stdout.write('%d' % (lo))
+print(lo)
