@@ -3,13 +3,16 @@
 A,B,C = map(int,input().split())
 
 
-def pow(x,m):
+def pow(x,m,C):
 
     if m==0:
         return 1
-    elif m==1:
-        return x
-    if m%2>0:#짝수
-        return (pow(x,m/2))**2
-    else: #홀수
-        return (pow(x,m/2)**2)*x
+
+    else:
+        tmp = pow(x, m // 2,C)
+        if m%2==0: #짝수일경우
+            return (tmp*tmp)%C
+        else: #홀수일경우
+            return (tmp*tmp)*x%C
+
+print(pow(A,B,C))
