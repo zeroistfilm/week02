@@ -28,12 +28,6 @@ def divide_search(array):
     divide_search(array[mid+1:end])
 
 
-
-
-
-
-
-
 while True:
     testcase = list(map(int,sys.stdin.readline().split()))
     N=testcase[0]
