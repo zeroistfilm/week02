@@ -1,5 +1,6 @@
 # https://www.acmicpc.net/problem/6549
 # &1 메모리 초과 : Q: 메모리 초과가 나오는것은 리스트의 문제인가??
+# https://bladejun.tistory.com/11 스택을 이용한  풀이
 import sys
 from collections import deque
 
