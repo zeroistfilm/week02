@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open('week02\\수정\\text\\01.txt', 'r')
+sys.stdin = open('week02/수정/text/01.txt', 'r')
 
 
 n = int(input())

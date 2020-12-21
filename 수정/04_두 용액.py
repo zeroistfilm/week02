@@ -19,15 +19,15 @@ for i in range(len(P)):
 
 	while low <= high:
 		mid = (low +high)//2
-		sum = P[i] + P[mid]
+		ans = P[i] + P[mid]
 
-		if abs(sum) < abs(min):		#최솟값 저장
-			min = sum
+		if abs(ans) < abs(min):		#최솟값 저장
+			min = ans
 			ans = [P[i], P[mid]]
 
-		if sum < 0:
+		if ans < 0:
 			low = mid + 1
-		elif sum > 0:
+		elif ans > 0:
 			high = mid - 1
 		else: # sum == 0
 			print(str(P[i])+' '+str(P[mid]))
