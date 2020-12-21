@@ -5,30 +5,16 @@ import sys
 
 N = int(sys.stdin.readline())
 
-def minheapsort(array):
-    result=[]
-    heap=[]
-    for i in array:
-        heapq.heappush(heap,i)
-    for i in range(len(heap)):
-        result.append(heapq.heappop(heap))
-    return result
-
-order =[]
+heap=[]
 for i in range(N):
-    order.append(int(sys.stdin.readline()))
+    x = int(sys.stdin.readline())
 
-result=[]
-for i in order:
-    if i ==0:
-
-        if len(result)==0:
-            print(0)
-        else:
-            print(result.pop())
-
+    if x: #0이 아니면
+        heapq.heappush(heap,(-x,x))
     else:
-        result.append(i)
-        result=minheapsort(result)
+        if len(heap)>=1:
+            print(heapq.heappop(heap)[1])
+        else:
+            print(0)
 
 
