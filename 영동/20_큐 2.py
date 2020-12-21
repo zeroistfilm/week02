@@ -2,7 +2,7 @@
 
 from collections import deque
 import sys
-class qqq():
+class queue():
     def __init__(self):
         self.queue=deque()
 
@@ -35,7 +35,7 @@ class qqq():
             return self.queue[-1]
 
 
-queue=qqq()
+queue=queue()
 N = int(input())
 orders=[]
 for i in range(N):
