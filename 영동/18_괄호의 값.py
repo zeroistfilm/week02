@@ -2,50 +2,64 @@
 
 
 checklist=input()
+#checklist="(()[[]])([])"
 
-stksmall=[]
-stkmid=[]
-
-A = []
-
-tmp=1
-result=0
-
-beforevalue=''
-for i in range(len(checklist)):
-
-    if checklist[i] == '[':
-        stkmid.append(checklist[i])
-        tmp*=3
-        beforevalue='['
-
-    elif checklist[i] == ']':
-        if beforevalue == '[':
-            result+=tmp
-        if len(stkmid)==0:
-            break
+def check_brakcets(ss):
+    stack = []
+    for s in ss:
+        if s == '(' or s == '[':
+            stack.append(s)
+        elif s == ')' and stack:
+            if stack[-1] == '(':
+                stack = stack[:-1]
+            else:
+                stack.append(s)
+        elif s == ']' and stack:
+            if stack[-1] == '[':
+                stack = stack[:-1]
+            else:
+                stack.append(s)
         else:
-            stkmid.pop()
-            tmp /= 3
-        beforevalue = ']'
+            stack.append(s)
+    if stack:
+        return False
+    else:
+        return True
 
-    elif checklist[i] == '(':
 
-        stkmid.append(checklist[i])
-        tmp *= 2
-        beforevalue = '('
-    elif checklist[i] == ')':
 
-        if beforevalue == '(':
-            result+=tmp
-        if len(stkmid)==0:
-            break
-        else:
-            stkmid.pop()
-            tmp /= 2
-        beforevalue=')'
+def sol(ss):
+    stack = []
+    for s in ss:
+        if s == '(' or s == '[':
+            stack.append(s)
+        elif s == ')':
+            if stack[-1] == '(':
+                stack[-1] = 2
+            else:
+                tmp = 0
+                for i in range(len(stack) - 1, -1, -1):
+                    if stack[i] == '(':
+                        stack[-1] = tmp * 2
+                        break
+                    else:
+                        tmp += stack[i]
+                        stack = stack[:-1]
+        elif s == ']':
+            if stack[-1] == '[':
+                stack[-1] = 3
+            else:
+                tmp = 0
+                for i in range(len(stack) - 1, -1, -1):
+                    if stack[i] == '[':
+                        stack[-1] = tmp * 3
+                        break
+                    else:
+                        tmp += stack[i]
+                        stack = stack[:-1]
+    return sum(stack)
 
-if len(stkmid)!=0 or len(stksmall)!=0:
-    print(int(0))
+if check_brakcets(checklist)==False:
+    print(0)
 else:
-    print(int(result))
+    print(sol(checklist))
