@@ -10,7 +10,7 @@ for i in range(N):
     if tmp[0]>tmp[1]:
         tmp[0],tmp[1] = tmp[1],tmp[0]
     ls.append(tmp)
-
+askdjaslkdjaslkjd
 D = int(sys.stdin.readline())
 
 ls.sort(key=lambda x:x[1])
