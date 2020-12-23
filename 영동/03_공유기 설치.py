@@ -13,10 +13,10 @@ left=1 #가능한 최소 거리
 right=house[-1]-house[0]
 d=0
 ans=0
-start=house[0]
-while left<=right:
 
+while left<=right:
     mid = (left+right)//2
+    start=house[0]
     cnt=1
 
 
