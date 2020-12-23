@@ -1,7 +1,4 @@
 # [백준] https://www.acmicpc.net/problem/2493 탑
-
-# 스택 안쓰고 풀어봤는데 런타임에러 뜸
-
 import sys
 sys.stdin = open('text/16.txt')
 N = int(sys.stdin.readline().strip())

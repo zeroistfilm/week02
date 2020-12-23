@@ -1,4 +1,4 @@
-import sys
+vvimport sys
 
 sys.stdin = open('text/20.txt')
 
