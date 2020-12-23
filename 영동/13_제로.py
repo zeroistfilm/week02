@@ -16,3 +16,4 @@ for i in orders:
         result.append(i)
 
 print(sum(result))
+

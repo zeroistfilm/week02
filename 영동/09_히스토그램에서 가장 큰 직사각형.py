@@ -10,7 +10,7 @@ while True:
     if N==0:#종료조건
         break
     area=0
-    stack = []
+    stack = []#스택에 인덱스를 넣는
 
     for i, h in enumerate(cols): #인덱스와 값을 동시에 전달한다.
         #print(i,h)

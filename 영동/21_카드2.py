@@ -15,6 +15,4 @@ while len(queue)!=1: #1이 아닐때 반복
         queue.popleft()
         queue.append(queue.popleft())
 
-
-
 print(queue[0])

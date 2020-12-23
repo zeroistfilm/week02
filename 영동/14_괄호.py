@@ -22,9 +22,6 @@ def check(value):
     else:
         return print('YES')
 
-
-
-
 for i in checks:
     value=str(i[0])
     check(value)

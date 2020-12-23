@@ -30,7 +30,6 @@ for i in range(N):
 
         heapq.heappush(minheap, (x,x))
     else:
-
         heapq.heappush(maxheap,(-x,x))
 
     if i==0:
